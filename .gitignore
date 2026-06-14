@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+uvicorn*.log
+models/**/*.pt
+models/**/*.pth
+scratch/
+Internal_evaluation/
+
+
+static/jas/loc2021/app/
+static/jas/loc2021/devdoc/
+static/jas/loc2021/JASApp/

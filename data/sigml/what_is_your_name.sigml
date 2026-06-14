@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: YOUR NAME WHAT -->
+<sigml>
+  <hns_sign gloss="YOUR">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmo/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="NAME">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hammiddlefingermod/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamlips/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="WHAT">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmu/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammovero/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

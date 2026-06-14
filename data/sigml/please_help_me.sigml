@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: PLEASE HELP ME -->
+<sigml>
+  <hns_sign gloss="PLEASE">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamchest/></hamlocation>
+      <hammovero/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="HELP">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamfist/>
+      <hamthumboutmod/>
+      <hamextfingerul/>
+      <hampalml/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoveu/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="ME">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamchest/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

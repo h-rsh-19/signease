@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: BLOOD PRESSURE — compound medical sign -->
+<sigml>
+  <hns_sign gloss="BLOOD">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamupperarm/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="PRESSURE">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamneutral/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

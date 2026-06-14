@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="POLICE">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamcurvhandshape/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation>
+        <hamchest/>
+        <hamleftshoulder/>
+      </hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveo/>
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

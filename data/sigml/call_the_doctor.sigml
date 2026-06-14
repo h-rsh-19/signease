@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: DOCTOR CALL -->
+<sigml>
+  <hns_sign gloss="DOCTOR">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hammiddlefingermod/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamwrist/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="CALL">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamcurvhandshape/>
+      <hamthumboutmod/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamear/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

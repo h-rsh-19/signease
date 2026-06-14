@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: EMERGENCY EXIT -->
+<sigml>
+  <hns_sign gloss="EMERGENCY">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamfist/>
+      <hamextfingerul/>
+      <hampalml/>
+      <hamlocation><hamchest/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveu/>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="EXIT">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sigml>
+  <hns_sign gloss="DANGER">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamfist/>
+      <hamthumboutmod/>
+      <hamextfingerul/>
+      <hampalml/>
+      <hamlocation>
+        <hamchest/>
+      </hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveu/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

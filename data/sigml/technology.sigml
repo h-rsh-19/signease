@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL conceptual equivalent: MACHINE SKILL/WORK -->
+<sigml>
+  <hns_sign gloss="MACHINE">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamfist/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamneutral/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammovero/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="SKILL">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamchest/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

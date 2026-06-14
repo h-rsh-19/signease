@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: YOU MEET HAPPY — same as common phrase, stored separately for domain clarity -->
+<sigml>
+  <hns_sign gloss="YOU">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="MEET">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamindexfinger/>
+      <hamextfingerul/>
+      <hampalmo/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="HAPPY">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamchest/></hamlocation>
+      <hammoveu/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

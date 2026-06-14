@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: THANK-YOU VERY MUCH — emphatic form of thanks -->
+<sigml>
+  <hns_sign gloss="THANK-YOU">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamthumboutmod/>
+      <hamextfingero/>
+      <hampalmu/>
+      <hamlocation><hamchin/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="VERY-MUCH">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmo/>
+      <hamlocation><hamneutral/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

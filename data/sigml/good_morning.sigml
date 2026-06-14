@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: MORNING GOOD -->
+<sigml>
+  <hns_sign gloss="MORNING">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmu/>
+      <hamlocation><hamelbow/></hamlocation>
+      <hammoveu/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="GOOD">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamthumboutmod/>
+      <hamextfingero/>
+      <hampalmu/>
+      <hamlocation><hamchin/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

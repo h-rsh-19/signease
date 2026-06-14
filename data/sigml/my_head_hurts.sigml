@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: HEAD PAIN (MY is implied by context) -->
+<sigml>
+  <hns_sign gloss="HEAD">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamforehead/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="PAIN">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamforehead/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammovero/>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

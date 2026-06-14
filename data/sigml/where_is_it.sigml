@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: IT WHERE -->
+<sigml>
+  <hns_sign gloss="IT">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="WHERE">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamneutral/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammovero/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

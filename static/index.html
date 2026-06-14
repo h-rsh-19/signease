@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignEase - Text to ISL Translation System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/jas/loc2021/cwa/cwasa.css" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body data-theme="dark">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🤟</div>
+      <div>
+        <h1 style="margin:0; font-size: 1.5rem;">SignEase</h1>
+        <p style="margin:0; font-size: 0.85rem; opacity: 0.8;">A Web-Based Text to Indian Sign Language Translation System</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button id="tabRec" class="tab">Camera</button>
+      <button id="tabText" class="tab active">Translator</button>
+      <label class="theme-toggle">
+        <span>Light</span>
+        <input id="themeToggle" type="checkbox" />
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- RECOGNITION PANEL -->
+    <section id="recPanel" class="card hidden">
+      <div class="card-title" style="margin-bottom: 1rem;">// ISL GESTURE RECOGNITION (RESEARCH MODULE)</div>
+      
+      <div class="card research-notice" style="margin-bottom: 1.5rem; border-left: 4px solid var(--primary); background: rgba(var(--primary-rgb), 0.05); padding: 1rem;">
+          <p style="margin:0; font-size: 0.9em;">🔍 <strong>Notice:</strong> This module is currently in the experimental research phase. Hand tracking and finger-count heuristics are active for demonstration.</p>
+      </div>
+
+      <div class="rec-grid">
+        <div class="rec-video-wrap">
+          <video id="cam" autoplay muted playsinline></video>
+          <canvas id="frameCanvas" width="640" height="360" class="hidden"></canvas>
+        </div>
+        <aside class="status-box">
+          <h3>Recognition Status</h3>
+          <p><strong>Top Label:</strong> <span id="topLabel">-</span></p>
+          <p><strong>Confidence:</strong> <span id="topConfidence">-</span></p>
+          <p><strong>Backend:</strong> <span id="backendState">-</span></p>
+          <p class="note" id="backendNote">-</p>
+          <p><strong>Committed Sequence</strong></p>
+          <div id="committedSeq" class="chips"></div>
+          <div class="controls">
+            <button id="startCam">Start Camera</button>
+            <button class="ghost" id="stopCam">Stop Camera</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TRANSLATOR PANEL -->
+    <section id="textPanel">
+      <div class="translator-grid">
+        <section class="card text-input-card">
+          <div class="card-title">// ENGLISH TEXT INPUT</div>
+          <textarea id="textInput" rows="5" maxlength="1000" placeholder="Type text and click Translate..."></textarea>
+          <div class="chip-row">
+            <button class="chip-preset">Good morning</button>
+            <button class="chip-preset">How can I help you</button>
+            <button class="chip-preset">Where is the hospital</button>
+            <button class="chip-preset">Nice to meet you</button>
+          </div>
+          <div class="row-inline">
+            <label for="renderMode">Render Mode</label>
+            <select id="renderMode">
+                <option value="sigml_avatar" selected>3D SiGML Avatar (Refined ISL)</option>
+                <option value="human_video">Human Video (High Fidelity)</option>
+                <option value="animated_video">Animated Video (Fallback)</option>
+            </select>
+            <button id="runText" class="primary-btn">Translate</button>
+          </div>
+
+          <!-- TRANSFORMATION FLOW -->
+          <div id="transformationFlow" class="transformation-flow">
+            <div class="muted">Enter a sentence and translate to see the pipeline breakdown.</div>
+          </div>
+        </section>
+
+        <section class="card output-card">
+          <div class="output-head">
+            <div class="card-title">// ISL OUTPUT</div>
+            <div class="play-controls">
+              <button id="playAllBtn">Play All</button>
+              <button class="ghost" id="stopAllBtn">Stop</button>
+              <button class="ghost" id="restartAllBtn">Restart</button>
+            </div>
+          </div>
+
+          <div class="output-main">
+            <div class="main-player-wrap">
+              <video id="mainPlayer" controls preload="metadata"></video>
+              <div id="avatarStage" class="hidden">
+                <div class="CWASAPanel av0" align="center"></div>
+                <div class="SToCA" align="center"></div>
+              </div>
+              <div id="mainPlayerMeta" class="muted">No sequence loaded.</div>
+            </div>
+            <aside>
+              <h3>Tokens</h3>
+              <div id="tokenList" class="chips"></div>
+            </aside>
+          </div>
+
+          <h3>Individual Clips</h3>
+          <div id="clipStrip" class="clip-strip"></div>
+        </section>
+      </div>
+
+      <section class="card pipeline-card">
+        <div class="card-title">PIPELINE / DIAGNOSTICS</div>
+        <div class="pipeline-grid">
+          <div class="pipeline-col">
+            <h4>Text Processing Trace</h4>
+            <pre id="diagBox" class="diag"></pre>
+          </div>
+          <div class="pipeline-col">
+            <h4>HamNoSys Notation</h4>
+            <div id="hamnosysBox" class="hamnosys-box">No SiGML loaded.</div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/jas/loc2021/cwa/allcsa.js"></script>
+  <script src="/static/app.js?v=1.1.2"></script>
+</body>
+
+</html>

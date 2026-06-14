@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: INDIA WELCOME -->
+<sigml>
+  <hns_sign gloss="INDIA">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamindexfinger/>
+      <hamthumboutmod/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamforehead/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="WELCOME">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmu/>
+      <hamlocation><hamchest/></hamlocation>
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

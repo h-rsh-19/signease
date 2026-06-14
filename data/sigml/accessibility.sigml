@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL conceptual equivalent: ALL ENTER CAN (universal access concept) -->
+<sigml>
+  <hns_sign gloss="ALL">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammovero/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="ENTER">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalml/>
+      <hamlocation><hamneutral/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammoveo/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="CAN">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamfist/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>

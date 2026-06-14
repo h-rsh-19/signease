@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ISL gloss order: WHAT HAPPEN -->
+<sigml>
+  <hns_sign gloss="WHAT">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamr/>
+      <hamflathand/>
+      <hamextfingero/>
+      <hampalmu/>
+      <hamlocation><hamneutral/></hamlocation>
+      <hammovero/>
+    </hamnosys_manual>
+  </hns_sign>
+  <hns_sign gloss="HAPPEN">
+    <hamnosys_nonmanual></hamnosys_nonmanual>
+    <hamnosys_manual>
+      <hamsymmlr/>
+      <hamindexfinger/>
+      <hamextfingero/>
+      <hampalmd/>
+      <hamlocation><hamneutral/></hamlocation>
+      <!-- NEEDS REVIEW -->
+      <hammovero/>
+      <hammoved/>
+    </hamnosys_manual>
+  </hns_sign>
+</sigml>
