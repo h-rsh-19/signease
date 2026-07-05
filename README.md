@@ -1,41 +1,84 @@
-﻿# trial3 - SignEase Multimodal (Standalone)
+# SignEase
 
-This is a standalone project for:
-1. Camera ISL recognition (YOLOv5/Ultralytics-compatible path)
-2. Text -> ISL pipeline with 3 render modes:
-   - human_video
-   - animated_video
-   - sigml_avatar
+Multimodal Indian Sign Language translation system with a FastAPI backend, browser UI, sign-video rendering, optional camera recognition, and SiGML/avatar support.
 
-## Fixed Data Sources
-- Animated videos: `E:\archive\INDIAN SIGN LANGUAGE ANIMATED VIDEOS_`
-- SiGML corpus: `E:\text_to_isl-main\text_to_isl-main\static`
-- Human videos fallback: `phase2_code/data/media/raw`
+## What It Does
+
+- Converts text input into Indian Sign Language render sequences.
+- Supports multiple render modes:
+  - human sign videos
+  - animated sign videos
+  - SiGML/avatar rendering
+- Exposes REST and WebSocket APIs for translation and recognition.
+- Serves a browser UI from `static/`.
+- Supports optional YOLO/Ultralytics model loading for camera-based recognition.
+
+## Why This Project
+
+SignEase is an accessibility-focused project. It combines backend APIs, local media catalogs, browser UI, and computer-vision-ready recognition endpoints into one working prototype.
+
+## Tech Stack
+
+- Python
+- FastAPI
+- Uvicorn
+- JavaScript
+- HTML/CSS
+- Pydantic
+- NumPy / Pillow
+- Optional Ultralytics YOLO
+
+## Structure
+
+```text
+app/
+  main.py
+  api/routes.py
+  services/
+    asset_catalog.py
+    recognition.py
+    renderer.py
+    text_pipeline.py
+static/
+  index.html
+  app.js
+  styles.css
+data/
+  animated_videos/
+  human_videos/
+  sigml/
+```
 
 ## Setup
+
 ```bash
-cd E:\projects\MAJOR Project\SignEase3\phase2_code\trial3
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+On Windows:
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
 ## Run
+
 ```bash
 uvicorn app.main:app --reload --port 8010
 ```
-Open `http://127.0.0.1:8010`
 
-## Optional YOLO model
-Place model at:
-`trial3/models/yolov5/best.pt`
+Open:
 
-Or set env var:
-`TRIAL3_YOLO_MODEL_PATH=...`
-
-If model/package is not available, recognition endpoints still run and report diagnostics with `model_loaded=false`.
+```text
+http://127.0.0.1:8010
+```
 
 ## API
+
 - `GET /api/assets/health`
 - `GET /api/assets/file?path=...`
 - `POST /api/recognition/frame`
@@ -43,6 +86,32 @@ If model/package is not available, recognition endpoints still run and report di
 - `POST /api/translation/text`
 - `POST /api/render/sequence`
 
+## Optional YOLO Recognition Model
+
+Place a YOLO model at:
+
+```text
+models/yolov5/best.pt
+```
+
+Or set:
+
+```bash
+export TRIAL3_YOLO_MODEL_PATH=/path/to/best.pt
+```
+
+If the model or package is unavailable, the API still runs and returns diagnostics with `model_loaded=false`.
+
 ## Notes
-- Manifests are generated at startup in `trial3/data/manifests`.
-- Build-first approach applied: full automated test suite can be added after feature stabilization.
+
+- Media assets are included so the app can render common signs locally.
+- Asset manifests are generated at startup.
+- This is a prototype/research project, not a production accessibility service yet.
+
+## What I Learned
+
+- Designing a FastAPI service around media-heavy workflows.
+- Building a browser UI for translation and render preview.
+- Organizing sign-language video and SiGML assets.
+- Creating fallback behavior when ML models are optional.
+- Connecting text processing, rendering, and recognition endpoints in one app.
