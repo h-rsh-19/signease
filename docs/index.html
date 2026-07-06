@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SignEase Demo</title>
+    <style>
+      body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #08111f; color: #eef6ff; }
+      main { max-width: 1120px; margin: 0 auto; padding: 48px 20px 72px; }
+      a { color: #67e8f9; }
+      h1 { font-size: clamp(2rem, 6vw, 4rem); margin: 0 0 12px; }
+      p { color: #bfd0e8; line-height: 1.6; }
+      .badges { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0; }
+      .badge { border: 1px solid #155e75; border-radius: 999px; padding: 8px 12px; background: #0f172a; color: #cffafe; font-size: 14px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 24px; }
+      figure { margin: 0; border: 1px solid #164e63; background: #0f172a; border-radius: 12px; overflow: hidden; }
+      img { width: 100%; display: block; }
+      figcaption { padding: 12px 14px; color: #dbeafe; font-size: 14px; }
+      .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+      .links a { border: 1px solid #22d3ee; border-radius: 8px; padding: 10px 14px; text-decoration: none; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>SignEase</h1>
+      <p>
+        Multimodal Indian Sign Language translation prototype with FastAPI, browser UI, local media assets,
+        translation diagnostics, and optional camera recognition.
+      </p>
+      <div class="badges">
+        <span class="badge">FastAPI</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">Accessibility</span>
+        <span class="badge">Media rendering</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/h-rsh-19/signease">GitHub Repo</a>
+      </div>
+
+      <div class="grid">
+        <figure>
+          <img src="./screenshots/01-translator-home.png" alt="SignEase translator home" />
+          <figcaption>Translator home screen</figcaption>
+        </figure>
+        <figure>
+          <img src="./screenshots/02-translated-output.png" alt="SignEase translated output" />
+          <figcaption>Translated output with tokens, clips, and diagnostics</figcaption>
+        </figure>
+      </div>
+    </main>
+  </body>
+</html>

@@ -8,7 +8,10 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from PIL import Image
+try:
+    from PIL import Image
+except Exception:  # pragma: no cover
+    Image = None
 
 from app.models import CandidatePrediction
 
@@ -189,6 +192,8 @@ class RecognitionService:
 
     @staticmethod
     def decode_image_base64(payload: str) -> np.ndarray:
+        if Image is None:
+            raise RuntimeError("Pillow is required for camera frame decoding.")
         raw = payload.split(",", 1)[1] if payload.startswith("data:") and "," in payload else payload
         image_bytes = base64.b64decode(raw)
         with Image.open(BytesIO(image_bytes)) as image:

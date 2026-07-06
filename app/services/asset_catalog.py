@@ -54,9 +54,20 @@ def _scan_sigml(roots: list[Path]) -> dict[str, str]:
     return result
 
 
-def _dump_manifest(path: Path, payload: dict[str, str]) -> None:
+def _manifest_payload(payload: dict[str, str], base_dir: Path) -> dict[str, str]:
+    portable: dict[str, str] = {}
+    for key, value in payload.items():
+        value_path = Path(value)
+        try:
+            portable[key] = value_path.resolve().relative_to(base_dir).as_posix()
+        except ValueError:
+            portable[key] = value
+    return portable
+
+
+def _dump_manifest(path: Path, payload: dict[str, str], base_dir: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    path.write_text(json.dumps(_manifest_payload(payload, base_dir), indent=2), encoding="utf-8")
 
 
 def build_catalog(
@@ -66,13 +77,14 @@ def build_catalog(
     sigml_roots: list[Path],
     manifest_dir: Path,
 ) -> AssetCatalog:
+    base_dir = manifest_dir.resolve().parents[1]
     human_videos = _scan_videos(human_media_dir)
     animated_videos = _scan_videos(animated_media_dir)
     sigml_files = _scan_sigml(sigml_roots)
 
-    _dump_manifest(manifest_dir / "human_video_manifest.json", human_videos)
-    _dump_manifest(manifest_dir / "animated_video_manifest.json", animated_videos)
-    _dump_manifest(manifest_dir / "sigml_manifest.json", sigml_files)
+    _dump_manifest(manifest_dir / "human_video_manifest.json", human_videos, base_dir)
+    _dump_manifest(manifest_dir / "animated_video_manifest.json", animated_videos, base_dir)
+    _dump_manifest(manifest_dir / "sigml_manifest.json", sigml_files, base_dir)
 
     return AssetCatalog(
         human_videos=human_videos,

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from urllib.parse import quote
 
@@ -25,6 +26,8 @@ def build_router(
     allowed_asset_roots: list[Path],
 ) -> APIRouter:
     router = APIRouter(prefix="/api")
+    allowed_asset_roots = [root.resolve() for root in allowed_asset_roots]
+    asset_base_dir = Path(os.path.commonpath([str(root) for root in allowed_asset_roots])).resolve()
 
     @router.get("/assets/health")
     def assets_health() -> dict[str, object]:
@@ -32,22 +35,18 @@ def build_router(
 
     @router.get("/assets/file")
     def assets_file(path: str = Query(..., min_length=3)) -> FileResponse:
-        base_dir = Path("e:/projects/MAJOR Project/SignEase3/phase2_code/trial3")
         path_obj = Path(path)
-        
-        # If relative, join with base_dir
         if not path_obj.is_absolute():
-            resolved = (base_dir / path_obj).resolve()
+            resolved = (asset_base_dir / path_obj).resolve()
         else:
             resolved = path_obj.resolve()
 
         if not resolved.exists() or not resolved.is_file():
             raise HTTPException(status_code=404, detail=f"File not found: {path}")
-        
-        # Security check: must be inside an allowed root or the base_dir itself
-        if not any(root in resolved.parents or resolved == root for root in allowed_asset_roots + [base_dir]):
+
+        if not any(root in resolved.parents or resolved == root for root in allowed_asset_roots):
             raise HTTPException(status_code=403, detail="Path outside allowed asset roots")
-        
+
         return FileResponse(resolved)
 
     @router.post("/recognition/frame", response_model=RecognitionFrameResponse)
@@ -103,15 +102,12 @@ def build_router(
             mode=payload.render_mode,
             token_confidence=payload.token_confidence,
         )
-        base_dir = Path("e:/projects/MAJOR Project/SignEase3/phase2_code/trial3")
         for artifact in result["artifacts"]:
             if artifact.path:
                 try:
-                    # Convert absolute path to project-relative path for cleaner URLs
-                    rel_path = Path(artifact.path).relative_to(base_dir).as_posix()
+                    rel_path = Path(artifact.path).relative_to(asset_base_dir).as_posix()
                     artifact.path = f"/api/assets/file?path={quote(rel_path, safe=':/._-')}"
                 except ValueError:
-                    # Fallback to absolute if outside (should not happen with our new setup)
                     artifact.path = f"/api/assets/file?path={quote(artifact.path, safe=':/._-')}"
         return result
 
